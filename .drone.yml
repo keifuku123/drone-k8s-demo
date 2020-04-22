@@ -10,15 +10,15 @@ steps:
 #      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 #      - golangci-lint run
 
-  - name: build
-    image: golang:latest
-    environment:
-      GOPROXY: https://goproxy.cn
-      GOOS: linux
-      GOARCH: amd64
-      CGO_ENABLED: 0
-    commands:
-      - go build -o demo-app
+#  - name: build
+#    image: golang:latest
+#    environment:
+#      GOPROXY: https://goproxy.cn
+#      GOOS: linux
+#      GOARCH: amd64
+#      CGO_ENABLED: 0
+#    commands:
+#      - go build -o demo-app
 
   - name: docker
     image: plugins/docker
