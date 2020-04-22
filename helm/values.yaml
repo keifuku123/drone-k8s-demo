@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: cnych/drone-k8s-demo
+  repository: keifuku123/drone-k8s-demo
   tag: latest
   pullPolicy: Always
 

@@ -23,10 +23,9 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: cnych/drone-k8s-demo
+      repo: keifuku123/drone-k8s-demo
       use_cache: true
-      username:
-        from_secret: docker_username
+      username: keifuku123
       password:
         from_secret: docker_password
     tags:
@@ -40,7 +39,7 @@ steps:
     image: quay.io/ipedrazas/drone-helm
     environment:
       STABLE_REPO_URL: https://mirror.azure.cn/kubernetes/charts/
-      SERVICE_ACCOUNT: tiller
+      SERVICE_ACCOUNT: test
       API_SERVER:
         from_secret: api_server
       KUBERNETES_TOKEN:
@@ -54,7 +53,7 @@ steps:
       chart: ./helm
       release: drk8d
       values_files: ["./helm/my-values.yaml"]
-      namespace: kube-ops
+      namespace: default
     when:
       event: push
       branch: master
